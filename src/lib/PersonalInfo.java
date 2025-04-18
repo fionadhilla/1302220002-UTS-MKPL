@@ -69,4 +69,7 @@ public class PersonalInfo {
 		child.add(new Child(childIdNumber, childName));
 	}
 
+    public List<Child> getChild() {
+        return child;
+    }
 }
