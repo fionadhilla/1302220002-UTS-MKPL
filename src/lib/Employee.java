@@ -8,41 +8,23 @@ import java.util.List;
 public class Employee {
 
 	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
+	private PersonalInfo personalInfo;
 	
 	private LocalDate yearJoined;
 	private LocalDate monthJoined;
 	private LocalDate dayJoined;
 	private int monthWorkingInYear;
 	
-	private boolean isForeigner;
-	private Gender gender;
-	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 	
-	private Spouse spouse;
-
-	private List<Child> child;
-
-	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate yearJoined, LocalDate monthJoined, LocalDate dayJoined, boolean isForeigner, Gender gender) {
+	public Employee(String employeeId, PersonalInfo personalInfo, LocalDate yearJoined, LocalDate monthJoined, LocalDate dayJoined) {
 		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
+		this.personalInfo = personalInfo;
 		this.yearJoined = yearJoined;
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
-		this.child = new LinkedList<Child>();
 	}
 	
 	/**
@@ -77,9 +59,7 @@ public class Employee {
 		this.otherMonthlyIncome = income;
 	}
 	
-	public void addChild(String childName, String childIdNumber) {
-		child.add(new Child(childIdNumber, childName));
-	}
+	
 	
 	public int getAnnualIncomeTax() {
 		
