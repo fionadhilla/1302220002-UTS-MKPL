@@ -25,11 +25,10 @@ public class Employee {
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 	
-	private String spouseName;
-	private String spouseIdNumber;
+	private Spouse spouse;
 
-	private List<String> childNames;
-	private List<String> childIdNumbers;
+	private List<Child> child;
+
 	
 	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate yearJoined, LocalDate monthJoined, LocalDate dayJoined, boolean isForeigner, Gender gender) {
 		this.employeeId = employeeId;
@@ -43,8 +42,7 @@ public class Employee {
 		this.isForeigner = isForeigner;
 		this.gender = gender;
 		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+		this.child = new LinkedList<Child>();
 	}
 	
 	/**
@@ -85,8 +83,7 @@ public class Employee {
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
+		child.add(new Child(childIdNumber, childName));
 	}
 	
 	public int getAnnualIncomeTax() {
